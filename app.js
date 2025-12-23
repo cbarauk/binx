@@ -1,5 +1,21 @@
 // app.js
 // =======================================================
+// RANDOM HERO BACKGROUND IMAGE
+// =======================================================
+
+(() => {
+  const heroBg = document.querySelector(".hero-bg");
+  if (!heroBg) return;
+
+  // Get a random image number between 1 and 50
+  const randomNum = Math.floor(Math.random() * 50) + 1;
+  const imageNum = String(randomNum).padStart(2, '0');
+  const imageUrl = `thumbnails/IMAGE${imageNum}.webp`;
+
+  heroBg.style.backgroundImage = `url('${imageUrl}')`;
+})();
+
+// =======================================================
 // STICKY HEADER
 // =======================================================
 
@@ -11,6 +27,23 @@ window.addEventListener("scroll", () => {
   } else {
     stickyHeader.classList.remove("visible");
   }
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
 });
 
 // =======================================================
@@ -270,8 +303,8 @@ window.addEventListener("mousemove", e => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('scroll-visible');
-        // Optional: Unobserve after animation to improve performance
-        // observer.unobserve(entry.target);
+        // Unobserve after animation to improve performance
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);

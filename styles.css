@@ -30,6 +30,9 @@ body {
   font-family: Inter, system-ui;
   overflow-x: hidden;
   cursor: none;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .cursor {
@@ -147,11 +150,25 @@ body {
   z-index: 2;
 }
 
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) opacity(0.03);
+  z-index: 0;
+}
+
 .hero-title {
   font-size: clamp(1.5rem, 5vw, 4.5rem);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.04em;
+  position: relative;
+  z-index: 1;
 }
 
 .word {
@@ -176,6 +193,7 @@ body {
   opacity: 0;
   animation: fade 1.2s ease forwards;
   animation-delay: 0.8s;
+  font-size: 1.5rem;
 }
 
 @keyframes wordRise {
@@ -188,6 +206,37 @@ body {
 @keyframes fade {
   to {
     opacity: 0.7;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -242,7 +291,7 @@ body {
   color: var(--fg);
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .team-title.scroll-visible {
@@ -261,9 +310,10 @@ body {
 .team-card {
   text-align: center;
   padding: 2rem;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease, box-shadow 0.5s ease;
   opacity: 0;
   transform: translateY(60px);
+  will-change: opacity, transform;
 }
 
 .team-card.scroll-visible {
@@ -282,12 +332,13 @@ body {
   background: rgba(255, 255, 255, 0.1);
   margin: 0 auto 1.5rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.6s ease;
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .team-card:hover .team-avatar {
   border-color: var(--accent);
   background: rgba(255, 211, 78, 0.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
 .team-name {
@@ -327,7 +378,7 @@ body {
   color: var(--fg);
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   line-height: 0.9;
 }
 
@@ -350,7 +401,7 @@ body {
   color: var(--muted);
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   margin: 0;
 }
 
@@ -369,7 +420,7 @@ body {
   color: var(--fg);
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   grid-column: 1 / -1;
   text-align: center;
 }
@@ -391,7 +442,8 @@ body {
   cursor: pointer;
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
 }
 
 .frame.scroll-visible {
@@ -404,11 +456,12 @@ body {
   display: block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s ease;
 }
 
 .frame:hover img {
   transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
 .meta {
@@ -524,7 +577,7 @@ body {
   text-transform: uppercase;
   border: 2px solid #5865f2;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
 }
 
