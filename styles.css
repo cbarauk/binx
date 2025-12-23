@@ -493,6 +493,7 @@ body {
 }
 
 .frame:hover img {
+  transform: scale(1.08);
   filter: brightness(1.1);
 }
 
