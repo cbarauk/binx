@@ -1,14 +1,28 @@
 // app.js
 // =======================================================
+// STICKY HEADER
+// =======================================================
+
+const stickyHeader = document.querySelector(".sticky-header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    stickyHeader.classList.add("visible");
+  } else {
+    stickyHeader.classList.remove("visible");
+  }
+});
+
+// =======================================================
 // GALLERY + VIEWER
 // =======================================================
 
-const images = Array.from({ length: 47 }, (_, i) => {
-  const num = String(i + 1).padStart(2, '0');
+const images = Array.from({ length: 50 }, (_, i) => {
+  const num = String(50 - i).padStart(2, '0');
   return {
     src: `thumbnails/IMAGE${num}.webp`,
-    title: `Image ${i + 1}`,
-    info: `Los Santos • Frame ${i + 1}`
+    title: `Image ${50 - i}`,
+    info: `Los Santos • Frame ${50 - i}`
   };
 });
 
@@ -263,7 +277,7 @@ window.addEventListener("mousemove", e => {
   }, observerOptions);
 
   // Observe all elements that should animate
-  const animateElements = document.querySelectorAll('.frame, .team-card, .team-title, .work-title');
+  const animateElements = document.querySelectorAll('.frame, .team-card, .team-title, .about-title, .about-description, .work-title');
   animateElements.forEach(el => {
     observer.observe(el);
   });
