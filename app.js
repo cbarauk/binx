@@ -1,21 +1,5 @@
 // app.js
 // =======================================================
-// RANDOM HERO BACKGROUND IMAGE
-// =======================================================
-
-(() => {
-  const heroBg = document.querySelector(".hero-bg");
-  if (!heroBg) return;
-
-  // Get a random image number between 1 and 50
-  const randomNum = Math.floor(Math.random() * 50) + 1;
-  const imageNum = String(randomNum).padStart(2, '0');
-  const imageUrl = `thumbnails/IMAGE${imageNum}.webp`;
-
-  heroBg.style.backgroundImage = `url('${imageUrl}')`;
-})();
-
-// =======================================================
 // STICKY HEADER
 // =======================================================
 
