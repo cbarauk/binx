@@ -188,7 +188,7 @@ body {
 }
 
 .hero p {
-  margin-top: 20px;
+  margin-top: 1.5rem;
   opacity: 0;
   animation: fade 1.2s ease forwards;
   animation-delay: 0.8s;
@@ -325,10 +325,12 @@ body {
 }
 
 .team-avatar {
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+  background-size: cover;
+  background-position: center;
   margin: 0 auto 1.5rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
   transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -433,7 +435,7 @@ body {
   padding: 4vw 6vw 8vw 6vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 80px 40px;
+  gap: 5rem 2.5rem;
 }
 
 .frame {
@@ -465,12 +467,12 @@ body {
 
 .meta {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
-  transform: translateY(20px);
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  transform: translateY(1.25rem);
   opacity: 0;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
   display: none;
 }
 
@@ -514,16 +516,16 @@ body {
 }
 
 .viewer-meta {
-  margin-top: 20px;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
 .viewer-meta h2 {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 .viewer-meta p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
 }
 
@@ -566,7 +568,7 @@ body {
 
 .discord-button {
   display: inline-block;
-  padding: 16px 40px;
+  padding: 1rem 2.5rem;
   background: linear-gradient(135deg, #5865f2, #4752c4);
   color: white;
   text-decoration: none;
@@ -584,7 +586,7 @@ body {
   background: linear-gradient(135deg, #7289da, #5865f2);
   border-color: var(--accent);
   box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 
 /* ---------- FOOTER ---------- */
