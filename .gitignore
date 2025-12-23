@@ -1,0 +1,15 @@
+# Backup and temporary folders
+New folder/
+BACKUP/
+*.bak
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
