@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Binx Productions</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .curved-loop-svg {
+      transform: translateZ(0.01px);
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: geometricPrecision;
+    }
+
+    .curved-loop-svg .curved-text {
+      fill: currentColor;
+      paint-order: stroke fill;
+      stroke: currentColor;
+      stroke-width: 0.6px;
+      stroke-opacity: 0.035;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor"></div>
+
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#team">TEAM</a></li>
+      <li><a href="#gallery">GALLERY</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <h1 class="hero-title">
+      <span class="word binx" style="--d:0s">BINX</span>
+      <span class="word" style="--d:.15s">PRODUCTIONS</span><br />
+      <span class="word" style="--d:.3s">VISUAL</span>
+      <span class="word" style="--d:.45s">ARCHIVE</span>
+    </h1>
+    <p>The Best Production Team on <span class="accent-text">VitalRP</span></p>
+  </header>
+
+  <section class="curved-loop-jacket">
+    <svg class="curved-loop-svg" viewBox="0 0 1440 120" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" dominant-baseline="middle">
+      <text id="measureText" xml:space="preserve" style="visibility: hidden; opacity: 0; pointer-events: none;"></text>
+      <defs>
+        <path id="curvePath" d="M-100,40 Q500,440 1540,40" fill="none" stroke="transparent" />
+      </defs>
+      <text font-weight="bold" xml:space="preserve" class="curved-text">
+        <textPath id="curveTextPath" href="#curvePath" startOffset="0" xml:space="preserve"></textPath>
+      </text>
+    </svg>
+  </section>
+
+  <section class="team-section" id="team">
+    <h2 class="team-title">MEET THE TEAM</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Damon</h3>
+        <p class="team-speciality">Founder</p>
+        <p class="team-location">America</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Maria</h3>
+        <p class="team-speciality">Assistant</p>
+        <p class="team-location">America</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Callum</h3>
+        <p class="team-speciality">Assistant</p>
+        <p class="team-location">United Kingdom</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Amy</h3>
+        <p class="team-speciality">Photographer</p>
+        <p class="team-location">Scotland</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="gallery" id="gallery">
+    <h2 class="work-title">OUR WORK</h2>
+  </main>
+
+  <div class="viewer" id="viewer">
+    <img id="viewerImg" />
+    <div class="viewer-meta">
+      <h2 id="viewerTitle"></h2>
+      <p id="viewerInfo"></p>
+    </div>
+    <button id="viewerClose">×</button>
+  </div>
+
+  <section class="contact-section" id="contact">
+    <h2 class="contact-title">CONTACT US</h2>
+    <p class="contact-subtitle">Join our Discord community</p>
+    <a href="https://discord.gg/" target="_blank" class="discord-button">JOIN DISCORD</a>
+  </section>
+
+  <footer class="footer">
+    <p>Made By Callum from Binx Productions</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

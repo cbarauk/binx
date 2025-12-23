@@ -1,0 +1,88 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LS VISUAL ARCHIVE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="cursor"></div>
+
+  <header class="hero">
+    <h1 class="hero-title">
+      <span class="word binx" style="--d:0s">BINX</span>
+      <span class="word" style="--d:.15s">PRODUCTIONS</span><br>
+      <span class="word" style="--d:.3s">VISUAL</span>
+      <span class="word" style="--d:.45s">ARCHIVE</span>
+    </h1>
+    <p>Virtual street photography • FiveM</p>
+  </header>
+
+  <!-- CURVED LOOP -->
+  <section class="curved-loop-jacket">
+    <svg class="curved-loop-svg" viewBox="0 0 1440 120">
+      <text id="measureText" xml:space="preserve" style="visibility: hidden; opacity: 0; pointer-events: none;"></text>
+      <defs>
+        <path
+          id="curvePath"
+          d="M-100,40 Q500,440 1540,40"
+          fill="none"
+          stroke="transparent"
+        />
+      </defs>
+      <text font-weight="bold" xml:space="preserve" class="curved-text">
+        <textPath id="curveTextPath" href="#curvePath" startOffset="0" xml:space="preserve"></textPath>
+      </text>
+    </svg>
+  </section>
+
+  <!-- MEET THE TEAM -->
+  <section class="team-section">
+    <h2 class="team-title">Meet The Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Title</h3>
+        <p class="team-speciality">Speciality</p>
+        <p class="team-location">From</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Title</h3>
+        <p class="team-speciality">Speciality</p>
+        <p class="team-location">From</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Title</h3>
+        <p class="team-speciality">Speciality</p>
+        <p class="team-location">From</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <h3 class="team-name">Title</h3>
+        <p class="team-speciality">Speciality</p>
+        <p class="team-location">From</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="gallery" id="gallery"></main>
+
+  <div class="viewer" id="viewer">
+    <img id="viewerImg" />
+    <div class="viewer-meta">
+      <h2 id="viewerTitle"></h2>
+      <p id="viewerInfo"></p>
+    </div>
+    <button id="viewerClose">×</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
